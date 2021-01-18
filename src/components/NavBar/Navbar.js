@@ -13,10 +13,18 @@ import { ShoppingCart } from "@material-ui/icons";
 import logo from "../../assets/logo.jpg";
 import useStyles from "./styles";
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = ({totalItems}) => {
   const classes = useStyles();
+
+  //to remove the cart icon i we're currently in '/cart'. 
+  const location = useLocation();
+
+  //useLocation use property 'path name'
+  //if(location.pathname === '/'){
+  //}
+
   return (
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
@@ -26,6 +34,7 @@ const Navbar = ({totalItems}) => {
             Fitness-Shop
           </Typography>
           <div className={classes.grow} />
+          {location.pathname === '/' && ( 
           <div className={classes.button}>
             {/* <Link to='/cart'>go to cart</Link> */}
             <IconButton component={Link} to='/cart' aria-label="Show cart items" color="inherit">
@@ -33,7 +42,8 @@ const Navbar = ({totalItems}) => {
                 <ShoppingCart />
               </Badge>
             </IconButton>
-          </div>
+          </div> 
+          )}
         </Toolbar>
       </AppBar>
     </>
