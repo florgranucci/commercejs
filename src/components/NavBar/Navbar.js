@@ -31,7 +31,7 @@ const Navbar = ({totalItems}) => {
         <Toolbar>
           <Typography component={Link} to='/' variant="h6" className={classes.title} color="inherit">
             <img src={logo} height="28px" className={classes.image} />
-            Fitness-Shop
+            ORBIT
           </Typography>
           <div className={classes.grow} />
           {location.pathname === '/' && ( 
