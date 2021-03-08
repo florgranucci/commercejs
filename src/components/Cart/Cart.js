@@ -16,18 +16,18 @@ function Cart({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
 
   const FilledCart = () => (
     <>
-      <Grid container spacing={3}>
+      <Grid container spacing={2}>
         {cart.line_items.map((item) => (
-          <Grid item xs={12} sm={4} key={item.id}>
+          <Grid item key={item.id}>
             <CartItem item={item} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart}/>
           </Grid>
         ))}
       </Grid>
       <div className={classes.cardDetails}>
-        <Typography variant="h4" color='secondary'>Subtotal: {cart.subtotal.formatted_with_symbol}</Typography>
+        <Typography variant="h5" >Subtotal carrito: {cart.subtotal.formatted_with_symbol}</Typography>
         <div>
-          <Button onClick={handleEmptyCart} className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" >Empty cart</Button>
-          <Button component={Link} to='/checkout' className={classes.checkoutButton} size="large" type="button" variant="contained" color="primary">Checkout</Button>
+          <Button onClick={handleEmptyCart} className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" >Vaciar carrito</Button>
+          <Button component={Link} to='/checkout' className={classes.checkoutButton} size="large" type="button" variant="contained" color="primary">Finalizar compra</Button>
         </div>
       </div>
     </>
@@ -39,8 +39,8 @@ function Cart({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
   return (
     <Container>
       <div className={classes.toolbar} />
-      <Typography className={classes.title} variant="h3" gutterBottom color='secondary'>
-        Your Shopping Cart
+      <Typography className={classes.title} variant="h4" gutterBottom >
+        Carrito:
       </Typography>
       {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
     </Container>

@@ -30,8 +30,8 @@ const Navbar = ({totalItems}) => {
       <AppBar position="fixed" className={classes.appBar} color="inherit">
         <Toolbar>
           <Typography component={Link} to='/' variant="h6" className={classes.title} color="inherit">
-            <img src={logo} height="28px" className={classes.image} />
-            ORBIT
+            {/* <img src={logo} height="28px" className={classes.image} /> */}
+            DULCE CAROLA
           </Typography>
           <div className={classes.grow} />
           {location.pathname === '/' && ( 

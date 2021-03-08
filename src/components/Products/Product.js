@@ -15,19 +15,15 @@ const Product = ({ product, onAddToCart }) => {
   const classes = useStyles();
 
   return (
-
-    <Card className={classes.root} width={1/4}>
-      <CardMedia
-        className={classes.media}
-        image={product.media.source}
-      />
-      <CardContent>
+<>
+      <div>
+        <img src={product.media.source} className={classes.media}/>
+      </div>
+      <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
         {/* {product.name} */}
         <Typography variant="h6" gutterBotton className={classes.title}>
           {product.name}
         </Typography>
-
-        <div className={classes.cardContent}>
           {/* {product.price} */}
           <Typography variant="h6" className={classes.title}>
             {product.price.formatted_with_symbol}
@@ -36,9 +32,8 @@ const Product = ({ product, onAddToCart }) => {
           <IconButton aria-label="Add to Cart" className={classes.title} onClick={() => onAddToCart(product.id, 1)}>
             <AddShoppingCart />
           </IconButton>
-        </div>
-      </CardContent>
-    </Card>
+      </div>
+    </>
 );
     {/* <Card className={classes.root}>
       <CardMedia

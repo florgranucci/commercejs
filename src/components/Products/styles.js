@@ -3,20 +3,25 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles(() => ({
     root: {
         margin: 0,
-        backgroundColor: '#2F3042',
+        backgroundColor: '#EAEAEA',
+        width: '276px',
+        maxWidth: '276px',
+        height: '430px'
       },
       media: {
-        height: 150,
-        paddingTop: '56.25%',
+        height: '280px',
+        maxHeight: '280px',
         backgroundSize: 'cover',
       },
       cardContent: {
         display: 'flex',
         justifyContent: 'space-between',
-        paddingTop: 10
+        paddingTop: 10,
+        heigth: '130px',
+        maxHeight: '130px',
       },
       title: {
-        color: 'white',
+        color: 'grey',
       },
       
       
